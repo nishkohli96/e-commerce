@@ -1,0 +1,32 @@
+{
+	"name": "react-nestjs-monorepo",
+	"author": "Nishant Kohli",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
+	"scripts": {
+		"frontend": "yarn workspace frontend start",
+		"frontend:test": "yarn workspace frontend test",
+		"frontend:build": "yarn workspace frontend build",
+		"server": "yarn workspace server start",
+		"server:build": "yarn workspace server build",
+		"server:prod": "yarn workspace server prod",
+		"express-server": "yarn workspace express-server start",
+		"express-server:build": "yarn workspace express-server build",
+		"express-server:build-run": "yarn workspace express-server build:run",
+		"shared-ui:build": "yarn workspace @shared/ui build",
+		"prettier": "prettier --write *",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"devDependencies": {
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1"
+	}
+}

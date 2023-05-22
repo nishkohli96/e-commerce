@@ -1,0 +1,33 @@
+services:
+    # run frontend-prod build on Port 5000
+    frontend:
+        image: docker_username/fs-docker-fe
+        build:
+            context: .
+            dockerfile: ./apps/frontend/Dockerfile
+        ports:
+            - '6000:80'
+
+    # run frontend in dev mode on Port 3000, with hot reloading
+    frontend-dev:
+        image: docker_username/fs-docker-fe-dev
+        build:
+            context: .
+            dockerfile: ./apps/frontend/Dockerfile.dev
+        ports:
+            - '3000:3000'
+        volumes:
+            - '/app/node_modules'
+            - './apps/frontend:/app/apps/frontend'
+
+    # run as a service of another dockerfile on port 4000,
+    backend:
+        extends:
+            file: ./apps/server/compose.yml
+            service: backend
+
+    # runs on port 5000
+    express-server:
+        extends:
+            file: ./apps/express-server/compose.yml
+            service: express-server

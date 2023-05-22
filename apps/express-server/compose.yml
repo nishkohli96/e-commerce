@@ -1,0 +1,8 @@
+services:
+    express-server:
+        image: docker_username/fs-docker-express
+        build:
+            context: ../../
+            dockerfile: ./apps/express-server/Dockerfile
+        ports:
+            - '4000:5000'

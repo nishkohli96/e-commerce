@@ -1,0 +1,9 @@
+services:
+    backend:
+        image: docker_username/fs-docker-be
+        build:
+            context: ../../
+            dockerfile: ./apps/server/Dockerfile
+        # command: ['node', './apps/server/dist/main.js']
+        ports:
+            - '4000:4000'
