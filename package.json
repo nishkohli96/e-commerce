@@ -1,0 +1,46 @@
+{
+  "name": "e-commerce-nextjs",
+  "version": "1.0.0",
+  "description": "E-commerce app built with NextJS v15.",
+  "author": "Nishant Kohli",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "prod": "yarn build && yarn start",
+    "lint": "next lint --fix",
+    "lint:check": "next lint",
+    "alter-db": "npx drizzle-kit push",
+    "migration": "npx drizzle-kit generate",
+    "apply-migration": "npx drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.2.1",
+    "@mui/material": "^6.2.1",
+    "@mui/material-nextjs": "^6.2.1",
+    "@next/env": "^15.1.5",
+    "@nish1896/rhf-mui-components": "^2.0.1",
+    "@vercel/postgres": "^0.10.0",
+    "drizzle-orm": "^0.38.4",
+    "next": "15.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@nish1896/eslint-flat-config": "^1.1.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.30.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
